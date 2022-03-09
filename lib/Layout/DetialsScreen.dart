@@ -38,11 +38,8 @@ class _DetialsScreenState extends State<DetialsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<MoviesCubit, MoviesState>(
-      listener: (context, state) {},
-      builder: (context, state) {
         MoviesCubit cubit = MoviesCubit.get(context);
-        changrColor(cubit.vote_average);
+        changrColor(cubit.vote_average!);
         return Scaffold(
           appBar: AppBar(
             title: Text(
@@ -65,7 +62,7 @@ class _DetialsScreenState extends State<DetialsScreen> {
                           fit: BoxFit.fitWidth,
                           height: MediaQuery.of(context).size.height / 2,
                           image: NetworkImage(
-                              "https://image.tmdb.org/t/p/w500${cubit.poster_path}"),
+                              "https://image.tmdb.org/t/p/w500${cubit.poster_path!}"),
                         ),
                         Positioned(
                             right: 3,
@@ -78,7 +75,7 @@ class _DetialsScreenState extends State<DetialsScreen> {
                             top: 20,
                             right: 20,
                             child: Text(
-                              "${cubit.vote_average}",
+                              "${cubit.vote_average!}",
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 15,
@@ -89,7 +86,7 @@ class _DetialsScreenState extends State<DetialsScreen> {
                     ),
                   ),
                   Text(
-                    "${cubit.title}",
+                    "${cubit.title!}",
                     style: TextStyle(
                       color: Colors.red,
                       fontSize: 30,
@@ -101,7 +98,7 @@ class _DetialsScreenState extends State<DetialsScreen> {
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Text(
-                        "${cubit.overview}",
+                        "${cubit.overview!}",
                         style: TextStyle(
                             color: Colors.white54,
                             fontSize: 16,
@@ -144,7 +141,7 @@ class _DetialsScreenState extends State<DetialsScreen> {
                           ],
                         ),
                         Text(
-                          "${cubit.original_language}",
+                          "${cubit.original_language!}",
                           style: TextStyle(color: Colors.white, fontSize: 20.0),
                         )
                       ],
@@ -155,7 +152,7 @@ class _DetialsScreenState extends State<DetialsScreen> {
                   ),
                 ]),
         );
-      },
-    );
+
+
   }
 }

@@ -12,10 +12,9 @@ class PopularScreen extends StatelessWidget {
       listener: (context ,state){},
       builder:(context ,state){
         MoviesCubit cubit = MoviesCubit.get(context);
-        cubit.getPopularMoviesDataFromApi();
         return ConditionalBuilder(
           condition: cubit.PopularList.isEmpty,
-          builder:(context)=> Center(child: CircularProgressIndicator(color: Colors.red,),) ,
+          builder :(context)=> Center(child: CircularProgressIndicator(color: Colors.red,),) ,
           fallback:(context)=> MoviesItems(cubit.PopularList,context,"popular"), );
       } ,
     );

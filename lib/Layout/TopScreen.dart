@@ -12,7 +12,6 @@ class TopScreen extends StatelessWidget {
       listener: (context ,state){},
       builder:(context ,state){
         MoviesCubit cubit = MoviesCubit.get(context);
-        cubit.getTopMoviesDataFromApi();
         return ConditionalBuilder(
             condition: cubit.TopMoviesList.isEmpty,
             builder:(context)=> Center(child: CircularProgressIndicator(color: Colors.red,),) ,

@@ -6,7 +6,8 @@ import 'package:movies_app_task/Shared/bloc/cubit.dart';
 import 'package:movies_app_task/Shared/bloc/states.dart';
 import 'package:movies_app_task/shared/DioHelper.dart';
 
-main(){
+main(context){
+  WidgetsFlutterBinding.ensureInitialized();
   DioHelper.init();
   runApp(MyApp());
 }

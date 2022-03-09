@@ -12,7 +12,6 @@ class NowPlayingScreen extends StatelessWidget {
       listener: (context ,state){},
       builder:(context ,state){
         MoviesCubit cubit = MoviesCubit.get(context);
-        cubit.getNowMoviesDataFromApi();
         return ConditionalBuilder(
           condition: cubit.NowPlayingList.isEmpty,
           builder:(context)=> Center(child: CircularProgressIndicator(color: Colors.red,),) ,

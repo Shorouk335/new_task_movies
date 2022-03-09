@@ -36,4 +36,5 @@ class ErrorNowMoviesApiState extends MoviesState {
   var error;
   ErrorNowMoviesApiState(this.error);
 }
+class LoadAllDataState extends MoviesState {}
 

@@ -24,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
       else
         MoviesCubit.get(context).ChangeMessage("Not connected");
     });
+      MoviesCubit.get(context).LoadAllData();
     super.initState();
     }
 
